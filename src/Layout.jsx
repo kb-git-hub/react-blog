@@ -1,8 +1,16 @@
-import React from 'react'
+import Header from './Header'
+import Nav from './Nav'
+import Footer from './Footer'
+import { Outlet } from 'react-router-dom'
 
-const Layout = () => {
+const Layout = ({search, setSearch}) => {
   return (
-    <div>Layout</div>
+    <div className="App">
+      <Header title='React Blog'/>
+      <Nav search={search} setSearch={setSearch}/>
+      <Outlet/>
+      <Footer/>
+    </div>
   )
 }
 

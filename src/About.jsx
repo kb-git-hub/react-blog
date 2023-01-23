@@ -1,8 +1,10 @@
-import React from 'react'
 
 const About = () => {
   return (
-    <main>About</main>
+    <main className="About">
+      <h2>About</h2>
+      <p>Project to learn functional React with Hooks</p>
+    </main>
   )
 }
 

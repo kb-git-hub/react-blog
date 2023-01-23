@@ -1,10 +1,11 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = ({title}) => {
   return (
-    <header className='Header'>{title}</header>
+    <header className='Header'>
+      <Link to='/'>{title}</Link>
+      </header>
   )
 }
 
-Header. defaultProps = {title: 'Header!!'}
 export default Header
