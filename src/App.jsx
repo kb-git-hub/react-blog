@@ -7,22 +7,40 @@ import NewPost from './NewPost'
 import PostPage from './PostPage'
 import About from './About'
 import Missing from './Missing'
-import { postsData } from './data.posts'
 import Layout from './Layout'
-
-
-// import { handleDelete, handleSubmit } from './utils'
-
-// Five different options to route to. 
+import api from './API/posts'
 
 function App() {
-  
-  const [posts, setPosts] = useState(postsData)
+
+
+  const [posts, setPosts] = useState([])
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [postTitle, setPostTitle] = useState('')
   const [postBody, setPostBody] = useState('')
   const navigate = useNavigate()
+
+  useEffect(()=>{
+    console.log({api})
+    const fetchPosts = async () =>{
+      try{
+        const response = await api.get('/posts')
+        setPosts(response.data)
+
+      } catch (err){
+
+        if (err.response){
+          // if not in 200 response range
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else console.log(`Error: ${err.message}`)
+      }
+    }
+
+    fetchPosts()
+
+  },[])
 
   useEffect(()=>{
     const filteredResults = posts.filter(post=>
@@ -42,7 +60,7 @@ function App() {
   const handleSubmit = (e) => {
   e.preventDefault()
   const id = posts.length ? posts[posts.length - 1].id + 1 : 1
-  const datetime = format(new Date(), "MMM dd, yyy pp")
+  const datetime = format(new Date(), "MMM dd, yyyy pp")
   const newPost = {
     id,
     title: postTitle,
@@ -59,6 +77,11 @@ function App() {
 
 
   return (
+
+
+
+    
+
     <Routes>
       <Route path='/' element={<Layout
         search={search}
@@ -80,7 +103,9 @@ function App() {
         </Route>
         <Route path='about' element={<About/>}/>
         <Route path='*' element={<Missing/>}/>
-   
+        
+
+
       </Route>
     </Routes>
   )
