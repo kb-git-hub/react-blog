@@ -9,10 +9,11 @@ import About from './About'
 import Missing from './Missing'
 import Layout from './Layout'
 import api from './API/posts'
+import EditPost from './EditPost'
+import useWindowSize from '../src/hooks/useWindowSize'
+
 
 function App() {
-
-
   const [posts, setPosts] = useState([])
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
@@ -20,6 +21,7 @@ function App() {
   const [postBody, setPostBody] = useState('')
   const [editTitle, setEditTitle] = useState('')
   const [editBody, setEditBody] = useState('')
+  const {width} = useWindowSize()
   const navigate = useNavigate()
 
   useEffect(()=>{
@@ -77,14 +79,11 @@ function App() {
 
   try{
     const response = await api.post('/posts', newPost)
-    console.log(response)
-    console.log(response.data)
     const allPosts = [...posts, response.data]
     setPosts(allPosts)
     setPostTitle("")
     setPostBody("")
     navigate("/")
-
   } catch(err){
     console.log(`Error: ${err.message}`)
   }
@@ -116,6 +115,7 @@ const handleEdit = async (id) =>{
       <Route path='/' element={<Layout
         search={search}
         setSearch={setSearch}
+        width={width}
         />}>
         <Route index element={<Home posts={searchResults}/>}/>
         <Route path='post'>
@@ -131,6 +131,20 @@ const handleEdit = async (id) =>{
             handleDelete={handleDelete}
             />}/>
         </Route>
+        
+        <Route path='edit'>
+          <Route path=':id'>
+            <Route index element={<EditPost
+              posts={posts}
+              handleEdit={handleEdit}
+              editTitle={editTitle}
+              setEditTitle={setEditTitle}
+              editBody = {editBody}
+              setEditBody = {setEditBody}
+            />}/>
+          </Route>
+        </Route>
+
         <Route path='about' element={<About/>}/>
         <Route path='*' element={<Missing/>}/>
       </Route>

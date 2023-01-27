@@ -23,8 +23,6 @@ const NewPost = ({handleSubmit,postTitle, setPostTitle,postBody, setPostBody}) =
           />
         <button type='submit'>Submit</button>
       </form>
-
-
     </main>
   )
 }
