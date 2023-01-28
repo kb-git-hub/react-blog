@@ -1,34 +1,16 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "post 1",
-      "datetime": "01/01/2023",
-      "body": "Hello from post 1"
-    },
-    {
       "id": 2,
-      "title": "post bobo",
-      "datetime": "Jan 25, 2023 3:58:48 PM",
-      "body": "individual bobo"
-    },
-    {
-      "id": 3,
-      "title": "post 44",
-      "datetime": "Jan 25, 2023 3:59:17 PM",
-      "body": "registering from post44"
+      "title": "Test Post 1",
+      "datetime": "Jan 28, 2023 10:10:40 AM",
+      "body": "Test Post  1 content"
     },
     {
       "id": 4,
-      "title": "New Post",
-      "datetime": "Jan 26, 2023 9:46:58 PM",
-      "body": "Test Post 4\n"
-    },
-    {
-      "id": 5,
-      "title": "Take out Trash",
-      "datetime": "Jan 27, 2023 9:46:24 AM",
-      "body": "Take out Trash"
+      "title": "test 344",
+      "datetime": "Jan 28, 2023 10:21:53 AM",
+      "body": "test 344"
     }
   ]
 }
