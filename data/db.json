@@ -1,16 +1,10 @@
 {
   "posts": [
     {
-      "id": 2,
-      "title": "Test Post 1",
-      "datetime": "Jan 28, 2023 10:10:40 AM",
-      "body": "Test Post  1 content"
-    },
-    {
-      "id": 4,
-      "title": "test 344",
-      "datetime": "Jan 28, 2023 10:21:53 AM",
-      "body": "test 344"
+      "id": 1,
+      "title": "1",
+      "datetime": "Jan 28, 2023 10:36:28 AM",
+      "body": "11"
     }
   ]
 }

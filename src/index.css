@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 
 * {
   margin: 0;
@@ -12,7 +12,7 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Code Pro", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -41,7 +41,7 @@ body {
 .Header,
 .Footer {
   width: 100%;
-  background-color: #5e4df5;
+  background-color: #000000;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -90,6 +90,7 @@ body {
   padding: 0.25rem;
   border-radius: 0.25rem;
   outline: none;
+  background-color: #b4b4b4;
 }
 
 .searchForm label {
@@ -142,7 +143,7 @@ body {
   flex-grow: 1;
   padding: 1rem;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: rgb(126, 126, 126);
 }
 
 .post {
@@ -196,6 +197,7 @@ body {
   border-radius: 0.25rem;
   margin-right: 0.25rem;
   outline: none;
+  background-color: #b4b4b4;
 }
 
 .newPostForm textarea {
@@ -282,6 +284,7 @@ body {
 
   .newPostForm textarea {
     height: 300px;
+    background-color: #b4b4b4;
   }
 }
 

@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
 const Layout = () => {
   return (
     <div className="App">
-      <Header title='React Blog'/>
+      <Header title='React Posts Pages'/>
       <Nav />
       <Outlet/>
       <Footer/>
